@@ -120,6 +120,15 @@ head(names(Data), 16)
 # independent tidy data set with the average of each variable 
 # for each activity and each subject.
 
+#Subject as a factor
+Data$subject <- as.factor(Data$subject)
+library(data.table)
+Data <- data.table(Data)
+
+#data set with average for each activity and subject.
+Data <- aggregate(. ~subject + activity, Data, mean)
+Data <- Data[order(Data$subject,Data$activity),]
+
 #To write on text file inside project path called TidyData.txt
 write.table(Data, "TidyData.txt", row.names = FALSE, quote = FALSE)
 file.size("TidyData.txt") #Size of the output file in Bytes
