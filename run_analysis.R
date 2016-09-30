@@ -8,7 +8,7 @@ fileurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%2
 download.file(fileurl, destfile = "./data/Dataset.zip")
 
 #Unzip download file in the same dir called data
-unzip("./data/getdata_projectfiles_UCI HAR Dataset.zip", exdir = "./data" )
+unzip("./data/Dataset.zip", exdir = "./data" )
 
 #Check if data is download and unziped correctly or not.
 #To do it, We should to list the files of data dir.
